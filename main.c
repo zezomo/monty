@@ -14,6 +14,7 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 
 	stack_t *new_node = malloc(sizeof(stack_t));
+
 	if (!new_node)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
@@ -37,8 +38,9 @@ void push(stack_t **stack, unsigned int line_number)
 void pall(stack_t **stack, unsigned int line_number)
 {
 	(void)line_number;
-	
+
 	stack_t *current = *stack;
+
 	while (current)
 	{
 		printf("%d\n", current->n);
@@ -46,7 +48,7 @@ void pall(stack_t **stack, unsigned int line_number)
 	}
 }
 
-int main()
+int main(void)
 {
 	stack_t *stack = NULL;
 	instruction_t instructions[] = {
